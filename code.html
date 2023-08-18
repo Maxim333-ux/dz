@@ -8,26 +8,42 @@
     <link rel="stylesheet" href="./css.css" />
   </head>
   <body>
-    <div class="holder">
-      <h1>Title</h1>
-      <ul class="list">
-        <li>
-          <a href="#">link1</a>
-          <ul>
-            <li><a href="#">link2</a></li>
-            <li><a href="#">link3</a></li>
-          </ul>
-        </li>
-        <li><a href="https://www.youtube.com/">link4</a></li>
-        <li><a href="https://validator.w3.org/">link5</a></li>
-        <li><a href="#">link6</a></li>
-      </ul>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore,
-        accusamus.
-      </p>
-      <h1>Title</h1>
-      <p>Lorem ipsum dolor sit amet.</p>
+    <button data-open-modal>відкрити</button>
+    <div class="backdrop is-hidden" data-backdrop>
+      <div class="modal">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis
+          debitis quibusdam doloremque perspiciatis distinctio consequuntur
+          nobis ipsa dolore earum quisquam qui eveniet maxime ad, numquam libero
+          quos, veritatis accusantium similique tempora nemo? Quo consequuntur
+          iusto eius aut facilis doloribus aliquam quae vitae dolor
+          voluptatibus? Accusamus corrupti cumque odio illo.
+        </p>
+        <button data-close-modal>Закрити</button>
+      </div>
+    </div>
+    <div class="scene">
+      <div class="box"></div>
     </div>
   </body>
 </html>
+<script>
+  const refs = {
+    openModalBtn: document.querySelector("[data-open-modal]"),
+    closeModalBtn: document.querySelector("[data-close-modal]"),
+    backdrop: document.querySelector("[data-backdrop]"),
+  };
+
+  refs.openModalBtn.addEventListener("click", toggleModal);
+  refs.closeModalBtn.addEventListener("click", toggleModal);
+
+  refs.backdrop.addEventListener("click", logBackdropClick);
+
+  function toggleModal() {
+    refs.backdrop.classList.toggle("is-hidden");
+  }
+
+  function logBackdropClick() {
+    console.log("Це клік в бекдроп");
+  }
+</script>
