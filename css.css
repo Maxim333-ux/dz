@@ -1,4 +1,4 @@
-.backdrop {
+/* .backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -48,4 +48,32 @@
 }
 .scene:hover .box {
   transform: rotateX(45px);
+} */
+@keyframes white-circle {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+.content-circle {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(208, 0, 255);
+  border-radius: 50%;
+  position: relative;
+  animation-name: white-circle;
+    animation-duration: 1500ms;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; */
+     animation-delay: 2s;
+}
+.content {
+  width: 800px;
+  background-color: aqua;
+  margin-left: auto;
+  margin-left: auto;
+  padding: 30px;
 }
